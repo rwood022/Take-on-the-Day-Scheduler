@@ -1,6 +1,6 @@
 # Take-on-the-Day-Scheduler
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)	![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)	![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 ## Description
 "Take on the Day Scheduler" will help the working user organize their schedule hour by hour. At the top of the page there is a current day, date, and time display. By clicking in the time block, the user is able to type tasks/memo/notes/reminder and save their input by pressing the blue save button. When each hour passes the color of the time block changes. Present hour is red, past hour(s) are gray, and future hour(s) are green. 
