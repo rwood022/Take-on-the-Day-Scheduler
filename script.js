@@ -32,10 +32,10 @@ saveBtn.on("save", handleInputSave);
 // Color change by time
 function blockColor(){
     var time = moment().hours();
-// for loop $.each("CLASS NAME"), then add logic
+// for loop $.each("CLASS NAME"), then added logic
 
     $(".task").each(function() {
-        var presentHour = parseInt($(this).attr("id"));
+        var presentHour = parseInt($(this).attr("id").split("-")[1]);
         console.log(presentHour);
 
         if (presentHour > time) {
