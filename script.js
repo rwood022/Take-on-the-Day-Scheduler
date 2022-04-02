@@ -34,7 +34,7 @@ function blockColor(){
     var time = moment().hours();
 // for loop $.each("CLASS NAME"), then added logic
 
-    $(".task").each(function() {
+    $(".time-block").each(function() {
         var presentHour = parseInt($(this).attr("id").split("-")[1]);
         console.log(presentHour);
 
