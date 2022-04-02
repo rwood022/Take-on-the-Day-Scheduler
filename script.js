@@ -7,23 +7,27 @@ var saveBtn = $(".saveBtn");
 var today = (moment().format("dddd, MMMM Do YYYY"));
 $("#currentDay").text(today);
 
+$(document).ready(function () {
+    $(".saveBtn").on("click", function() {
+        var hour = $(this).parent().attr('id');
+        var task = $(this).siblings(".task").val();
+    
+    localStorage.setItem(hour, task);
+    })
+
+    // Color change by time
+    
+
+})
+// Save task input into local storage
+
+
 function saveInput() {
 
 }
-
-// Save input in textbox
-// var handleInputSave = function (event) {
-//     event.preventDefault ();
-//     var hourInput = hourInputEl.val();
-//     printHourInput(hourInput);   
-// }
-// saveBtn.on("save", handleInputSave);
-
-
-// Color change by time
-function blockColor(){
+function blockColor() {
     var time = moment().hours();
-// for loop $.each("CLASS NAME"), then added logic
+    // for loop $.each("ID NAME"), then added logic
 
     $(".time-block").each(function () {
         var presentHour = parseInt($(this).attr("id").split("-")[1]);
@@ -40,17 +44,21 @@ function blockColor(){
             $(this).addClass("future");
         }
     })
-};
+    }
+// Save input in textbox
+// var handleInputSave = function (event) {
+//     event.preventDefault ();
+//     var hourInput = hourInputEl.val();
+//     printHourInput(hourInput);   
+// }
+// saveBtn.on("save", handleInputSave);
+
+
+
 
 blockColor();
 
-// Save task input into local storage
-$(".saveBtn").on("click", function() {
-    var hour = $(this).parent().attr('id');
-    var task = $(this).siblings(".task").val();
 
-localStorage.setItem(hour, task);
-})
 
 var interval = setInterval(blockColor, 1000);
 
@@ -60,13 +68,13 @@ var interval = setInterval(blockColor, 1000);
   $('#10 .task').val(localStorage.getItem('10'));
   $('#11 .task').val(localStorage.getItem('11'));
   $('#12 .task').val(localStorage.getItem('12'));
-  $('#1 .task').val(localStorage.getItem('1'));
-  $('#2 .task').val(localStorage.getItem('2'));
-  $('#3 .task').val(localStorage.getItem('3'));
-  $('#4 .task').val(localStorage.getItem('4'));
-  $('#5 .task').val(localStorage.getItem('5'));
+  $('#13 .task').val(localStorage.getItem('13'));
+  $('#14 .task').val(localStorage.getItem('14'));
+  $('#15 .task').val(localStorage.getItem('15'));
+  $('#16 .task').val(localStorage.getItem('16'));
+  $('#17 .task').val(localStorage.getItem('17'));
 
-localStorage.getItem(hour, task);
+
 
 
 
