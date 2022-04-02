@@ -7,26 +7,17 @@ var saveBtn = $(".saveBtn");
 var today = (moment().format("dddd, MMMM Do YYYY"));
 $("#currentDay").text(today);
 
+function saveInput() {
 
-//Text in textbox
-var printHourInput = function (input) {
-    var listEl = $("<li>");
-    listEl.addClass("list-group-item").text(listEl);
-    listEl.appendTo(hourInputEl);
-};
-
-// Save input in textbox
-var handleInputSave = function (event) {
-    event.preventDefault ();
-
-    var hourInput = hourInputEl.val();
-
-    printHourInput(hourInput);
-
-   
 }
 
-saveBtn.on("save", handleInputSave);
+// Save input in textbox
+// var handleInputSave = function (event) {
+//     event.preventDefault ();
+//     var hourInput = hourInputEl.val();
+//     printHourInput(hourInput);   
+// }
+// saveBtn.on("save", handleInputSave);
 
 
 // Color change by time
@@ -34,11 +25,11 @@ function blockColor(){
     var time = moment().hours();
 // for loop $.each("CLASS NAME"), then added logic
 
-    $(".time-block").each(function() {
+    $(".time-block").each(function () {
         var presentHour = parseInt($(this).attr("id").split("-")[1]);
         console.log(presentHour);
 
-        if (presentHour > time) {
+        if (presentHour < time) {
             $(this).addClass("past");
         } else if (presentHour === time) {
             $(this).removeClass("past");
@@ -51,18 +42,21 @@ function blockColor(){
     })
 };
 
+blockColor();
+
 // Save task input into local storage
-saveBtn.on("click", function() {
-    var hour = $(this).siblings(".hour").text();
+$(".saveBtn").on("click", function() {
+    var hour = $(this).parent().attr('id');
     var task = $(this).siblings(".task").val();
 
 localStorage.setItem(hour, task);
 })
 
-var interval = setInterval(blockColor, 15000);
+var interval = setInterval(blockColor, 1000);
 
   // load any saved data from localStorage
   $('#9 .task').val(localStorage.getItem('9'));
+  console.log("#9".val);
   $('#10 .task').val(localStorage.getItem('10'));
   $('#11 .task').val(localStorage.getItem('11'));
   $('#12 .task').val(localStorage.getItem('12'));
