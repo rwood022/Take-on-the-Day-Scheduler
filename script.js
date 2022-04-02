@@ -22,7 +22,7 @@ $(document).ready(function () {
         console.log(time);
         // for loop $.each("ID NAME"), then added logic
         $(".time-block").each(function () {
-            var presentHour = parseInt($(this).attr("id")[1]);
+            var presentHour = parseInt($(this).attr("id"));
             console.log(presentHour);
             console.log($(this));
 
